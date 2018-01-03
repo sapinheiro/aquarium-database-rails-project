@@ -1,0 +1,32 @@
+<%= form_with(model: habitat, local: true) do |form| %>
+  <% if habitat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(habitat.errors.count, "error") %> prohibited this habitat from being saved:</h2>
+
+      <ul>
+      <% habitat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :habitat_id %>
+   
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :habitat_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :habitat_description %>
+  </div>
+
+
+	  <%= form.hidden_field :year_added, value:  2017 %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

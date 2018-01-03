@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration code:</strong>
+  <%= @event_registration.registration_code %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @event_registration.time %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @event_registration.member_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @event_registration.event_id %>
+</p>
+
+<p>
+  <strong>Guest count:</strong>
+  <%= @event_registration.guest_count %>
+</p>
+
+<%= link_to 'Edit', edit_event_registration_path(@event_registration) %> |
+<%= link_to 'Back', event_registrations_path %>

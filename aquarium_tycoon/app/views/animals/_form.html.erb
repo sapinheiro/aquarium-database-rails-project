@@ -1,0 +1,39 @@
+<%= form_with(model: animal, local: true) do |form| %>
+  <% if animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+
+      <ul>
+      <% animal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :animal_id %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :animal_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :species %>
+    <%= form.text_field :species, id: :animal_species %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tank_id %>
+    <%= form.collection_select(:tank_id, Tank.order('name'), :tank_id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.datetime_select :birth_date, id: :animal_birth_date, :end_year => Date.today.year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

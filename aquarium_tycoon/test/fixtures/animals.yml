@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  species: MyString
+  tank: 
+  birth_date: 2017-11-29 20:18:35
+
+two:
+  name: MyString
+  species: MyString
+  tank: 
+  birth_date: 2017-11-29 20:18:35

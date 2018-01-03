@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  treatment_id: 
+  time: 2017-12-03 22:48:48
+  medicine: MyString
+  quantity: 1.5
+  employee_id: 1
+  animal_id: 1
+
+two:
+  treatment_id: 
+  time: 2017-12-03 22:48:48
+  medicine: MyString
+  quantity: 1.5
+  employee_id: 1
+  animal_id: 1

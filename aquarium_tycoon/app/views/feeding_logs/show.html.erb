@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Feeding:</strong>
+  <%= @feeding_log.feeding_id %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @feeding_log.time %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @feeding_log.food %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @feeding_log.quantity %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @feeding_log.employee_id %>
+</p>
+
+<p>
+  <strong>Tank:</strong>
+  <%= @feeding_log.tank_id %>
+</p>
+|
+<%= link_to 'Back', feeding_logs_path %>

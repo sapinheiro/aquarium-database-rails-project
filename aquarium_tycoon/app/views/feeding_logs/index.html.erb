@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Feeding Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feeding</th>
+      <th>Time</th>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Employee</th>
+      <th>Tank</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<br>
+
+<%= link_to 'New Feeding Log', new_feeding_log_path %>
+<br>
+
+  <tbody>
+    <% @feeding_logs.each do |feeding_log| %>
+      <tr>
+        <td><%= feeding_log.feeding_id %></td>
+        <td><%= feeding_log.time %></td>
+        <td><%= feeding_log.food %></td>
+        <td><%= feeding_log.quantity %></td>
+        <td><%= feeding_log.employee_id %></td>
+        <td><%= feeding_log.tank_id %></td>
+        <td><%= link_to 'Show', feeding_log %></td>
+ 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

@@ -1,0 +1,54 @@
+<%= form_with(model: tank, local: true) do |form| %>
+  <% if tank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tank.errors.count, "error") %> prohibited this tank from being saved:</h2>
+
+      <ul>
+      <% tank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :tank_id %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :tank_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :tank_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :water_type %>
+    <%= form.radio_button :water_type, 'fresh', :checked => true %>
+    <%= label_tag(:water_type_fresh, "fresh") %>
+    <%= form.radio_button :water_type, 'salt' %>
+    <%= label_tag(:water_type_salt, "salt") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :volume %>
+    <%= form.text_field :volume, id: :tank_volume %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temperature %>
+    <%= form.text_field :temperature, id: :tank_temperature %>
+  </div>
+
+    <%= form.hidden_field :year_built, value:  2017 %>
+
+  <div class="field">
+    <%= form.label :habitat_id %>
+    <%= form.collection_select(:habitat_id, Habitat.order('name'), :habitat_id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

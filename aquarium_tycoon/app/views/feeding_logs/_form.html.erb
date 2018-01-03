@@ -1,0 +1,43 @@
+<%= form_with(model: feeding_log, local: true) do |form| %>
+  <% if feeding_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feeding_log.errors.count, "error") %> prohibited this feeding_log from being saved:</h2>
+
+      <ul>
+      <% feeding_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time, id: :feeding_log_time, :discard_day => true, :discard_month => true, :discard_year => true %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :food %>
+    <%= form.text_field :food, id: :feeding_log_food %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity, id: :feeding_log_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.collection_select(:employee_id, Employee.find_by_sql('call current_employees()'), :employee_id, :full_name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tank_id %>
+    <%= form.collection_select(:tank_id, Tank.order('name'), :tank_id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

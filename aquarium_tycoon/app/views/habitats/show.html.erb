@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Habitat:</strong>
+  <%= @habitat.habitat_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @habitat.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @habitat.description %>
+</p>
+
+<p>
+  <strong>Year added:</strong>
+  <%= @habitat.year_added %>
+</p>
+
+<%= link_to 'Edit', edit_habitat_path(@habitat) %> |
+<%= link_to 'Back', habitats_path %>

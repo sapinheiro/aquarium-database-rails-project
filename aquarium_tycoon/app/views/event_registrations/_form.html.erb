@@ -1,0 +1,36 @@
+<%= form_with(model: event_registration, local: true) do |form| %>
+  <% if event_registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event_registration.errors.count, "error") %> prohibited this event_registration from being saved:</h2>
+
+      <ul>
+      <% event_registration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.hidden_field :registration_code %>
+
+    <%= form.hidden_field :time , :value => Time.now %>
+
+    <div class="field">
+      <%= form.label :member_id %>
+      <%= form.collection_select(:member_id, Member.find_by_sql('call current_members()'), :member_id, :full_name) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :event_id %>
+      <%= form.collection_select(:event_id, Event.find_by_sql('call upcoming_events()'), :event_id, :title_date) %>
+    </div>
+
+  <div class="field">
+    <%= form.label :guest_count %>
+    <%= form.text_field :guest_count, id: :event_registration_guest_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

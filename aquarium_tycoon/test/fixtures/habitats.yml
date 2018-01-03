@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  habitat_id: 1
+  name: MyString
+  description: MyString
+  year_added: 1
+
+two:
+  habitat_id: 1
+  name: MyString
+  description: MyString
+  year_added: 1

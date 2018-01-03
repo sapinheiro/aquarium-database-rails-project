@@ -1,0 +1,49 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.hidden_field :event_id %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :event_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :managing_employee %>
+    <%= form.collection_select(:managing_employee, Employee.find_by_sql('call current_employees()'), :employee_id, :full_name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_guests_per_person %>
+    <%= form.number_field :max_guests_per_person, id: :event_max_guests_per_person %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_attending %>
+    <%= form.number_field :max_attending, id: :event_max_attending %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_date %>
+    <%= form.datetime_select :event_date, id: :event_event_date, start_year: Time.now.year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

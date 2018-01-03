@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Treatment:</strong>
+  <%= @treatment_log.treatment_id %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @treatment_log.time %>
+</p>
+
+<p>
+  <strong>Medicine:</strong>
+  <%= @treatment_log.medicine %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @treatment_log.quantity %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @treatment_log.employee_id %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @treatment_log.animal_id %>
+</p>
+ 
+<%= link_to 'Back', treatment_logs_path %>

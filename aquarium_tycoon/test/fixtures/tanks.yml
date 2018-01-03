@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tank_id: 1
+  name: MyString
+  description: MyString
+  water_type: MyString
+  volume: 1.5
+  temperature: 1.5
+  year_built: 1
+  habitat_id: 1
+
+two:
+  tank_id: 1
+  name: MyString
+  description: MyString
+  water_type: MyString
+  volume: 1.5
+  temperature: 1.5
+  year_built: 1
+  habitat_id: 1
